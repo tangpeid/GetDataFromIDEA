@@ -2,6 +2,7 @@
 import datetime
 import codecs
 import pandas as pd
+import sys
 
 
 def Change_name(name):
@@ -47,9 +48,10 @@ def getData(dtStr):
             print Change_name(key) + '   ' + adata[key]
 
 
-
-
 def main():
-    getData('2017-6-15 0:0:0')
+    if len(sys.argv) != 3:
+        print "没有输入时间！"
+    else:
+        getData('2017-6-15 0:0:0')
 if __name__ == '__main__':
     main()
